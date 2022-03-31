@@ -52,12 +52,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'Homepage';
 $route['aplikasi'] = 'Dashboard';
 
+// Routing User
 $route['user'] = 'User';
 $route['user/add'] = "User/addUser";
 $route['user/insert'] = "User/addUserProses";
 $route['user/edit/(:any)'] = "User/editUser/$1";
 $route['user/update'] = "User/editUserProses";
 $route['user/delete/(:any)'] = "User/deleteUser/$1";
+
+// Routing Karyawan
+$route['karyawan'] = 'Karyawan';
+$route['karyawan/add'] = "Karyawan/addKaryawan";
+$route['karyawan/insert'] = "Karyawan/addKaryawanProses";
+$route['karyawan/sukses/(:any)'] = "Karyawan/karyawanSukses/$1";
 
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
