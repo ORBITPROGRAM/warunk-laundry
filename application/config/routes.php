@@ -66,5 +66,14 @@ $route['karyawan/add'] = "Karyawan/addKaryawan";
 $route['karyawan/insert'] = "Karyawan/addKaryawanProses";
 $route['karyawan/sukses/(:any)'] = "Karyawan/karyawanSukses/$1";
 
+// Routing Jabatan
+$route['jabatan'] = 'Jabatan';
+$route['jabatan/add'] = 'Jabatan/addJabatan';
+$route['jabatan/insert'] = 'Jabatan/addJabatanProses';
+$route['jabatan/edit(:any)'] = 'Jabatan/editJabatan/$1';
+$route['jabatan/update'] = 'Jabatan/editJabatanProses';
+$route['jabatan/delete/(:any)'] = 'Jabatan/deleteJabatan/$1';
+
+
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

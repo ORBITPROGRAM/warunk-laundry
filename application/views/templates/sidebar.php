@@ -72,6 +72,11 @@
               <i class="bi bi-circle"></i><span>Penggajian Karyawan</span>
             </a>
           </li>
+					<li>
+            <a href="<?php echo base_url('jabatan')?>">
+              <i class="bi bi-circle"></i><span>Jenis Jabatan</span>
+            </a>
+          </li>
         </ul>
       </li><!-- End Karyawan Nav -->
 
