@@ -12,12 +12,12 @@
       </li><!-- End Dashboard Nav -->
 
 	  <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#layanan-nav" data-bs-toggle="collapse" href="#">
+        <a class="nav-link collapsed" data-bs-target="#master-nav" data-bs-toggle="collapse" href="#">
           <i class="bi bi-menu-button-wide"></i><span>Kelola Master</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
-        <ul id="layanan-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+        <ul id="master-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="components-alerts.html">
+            <a href="<?php echo base_url('user') ?>">
               <i class="bi bi-circle"></i><span>Data User</span>
             </a>
           </li>

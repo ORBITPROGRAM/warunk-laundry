@@ -1,7 +1,7 @@
 <?php
 
 class UserModel extends CI_Model {
-	private $_user_tbl = 'users';
+	private $_user_tbl = 'user';
 
 	public function getUser() {
 		$query = $this->db->get($this->_user_tbl);
@@ -23,6 +23,16 @@ class UserModel extends CI_Model {
 
 	public function deleteUser($id_user) {
 		return $this->db->delete($this->_user_tbl, array('id_user' => $id_user));
+	}
+
+	// Check username ada atau tidak
+	public function check_username_exists($username) {
+		$query = $this->db->get_where($this->_user_tbl, array('username' => $username));
+		if (empty($query->row_array())) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 }
 

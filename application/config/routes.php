@@ -54,7 +54,6 @@ $route['aplikasi'] = 'Dashboard';
 
 // Routing User
 $route['user'] = 'User';
-$route['user/add'] = "User/addUser";
 $route['user/insert'] = "User/addUserProses";
 $route['user/edit/(:any)'] = "User/editUser/$1";
 $route['user/update'] = "User/editUserProses";

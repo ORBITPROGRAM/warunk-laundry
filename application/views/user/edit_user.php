@@ -1,43 +1,72 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Edit User</title>
-</head>
-<body>
-	<h1>Edit User</h1>
+<main id="main" class="main">
 
-	<?php foreach ($user as $u) : ?>
+<div class="pagetitle">
+  <h1><?php echo $title?></h1>
+  <nav>
+	<ol class="breadcrumb">
+	  <li class="breadcrumb-item"><a href="<?php echo base_url() ?>">Beranda</a></li>
+	  <li class="breadcrumb-item active"><?php echo $title; ?></li>
+	</ol>
+  </nav>
+</div><!-- End Page Title -->
 
-	<form action="<?php echo base_url('user/update'); ?>" method="POST">
-		<input type="hidden" id="id_user" name="id_user" value="<?php echo $u->id_user; ?>">
-		<label for="">Nama Lengkap</label>
-		<input type="text" name="nama_user" value="<?php echo $u->nama_user; ?>">
-		<br>
-		<label for="">Username</label>
-		<input type="text" name="username" value="<?php echo $u->username; ?>">
-		<br>
-		<label for="">Password</label>
-		<input type="text" name="password" value="<?php echo $u->password; ?>">
-		<br>
-		<label for="role">ROLE</label>
-		<select name="role" id="role">
-			<option value>Pilih Role</option>
-			<option <?php if ($u->role == 'admin') {
-								echo 'SELECTED';
-					} ?> value="admin">Administrator</option>
-			<option <?php if ($u->role == 'kepala_toko') {
-								echo 'SELECTED';
-					} ?> value="kepala_toko">Kepala Toko</option>
-		</select>
-		<br>
-		<button type="submit" class="btn btn-success">Simpan</button>
-		<a href="<?php echo base_url('user'); ?>" >Kembali</a>
-	</form>
+<section class="section dashboard">
+  <div class="row">
 
-	<?php endforeach; ?>
-	
-</body>
-</html>
+	<div class="col-lg-12">
+
+	<div class="card">
+		<div class="card-header">
+			<h5>Tambah User/Pengguna</h5>
+		</div>
+		<div class="card-body">
+		<?php foreach ($user as $u) : ?>
+			
+			<form action="<?php echo base_url('user/update'); ?>" method="POST">
+				<div class="col-md-12">
+				<label for="nama_lengkap" class="form-label">Nama Lengkap</label>
+					<input type="hidden" class="form-control" id="id_user" name="id_user" value="<?php echo $u->id_user; ?>">
+					<input type="text" class="form-control" id="nama_lengkap" name="nama_lengkap" value="<?php echo $u->nama_lengkap; ?>">
+					<div class="text-danger"><?php echo form_error('nama_lengkap') ?></div>
+				</div>
+				<div class="col-md-12 mt-3">
+				<label for="username" class="form-label">Username</label>
+					<input type="text" class="form-control" id="username" name="username" value="<?php echo $u->username; ?>">
+					<div class="text-danger"><?php echo form_error('username') ?></div>
+				</div>
+				<div class="col-md-12 mt-3">
+				<label for="pasword" class="form-label">Password</label>
+					<input type="text" class="form-control" id="password" name="password" placeholder="Masukan Password baru atau lama">
+					<div class="text-danger"><?php echo form_error('password') ?></div>
+				</div>
+				<div class="col-md-12 mt-3">
+					<label for="akses" class="form-label">Level</label>
+					<select class="form-select" name="akses" id="akses">
+						<option value>Pilih Level</option>
+						<option <?php if ($u->akses == 'pimpinan') {
+												echo 'SELECTED';
+											} ?> value="pimpinan">Pimpinan</option>
+						<option <?php if ($u->akses == 'admin') {
+												echo 'SELECTED';
+											} ?> value="admin">Administrator</option>
+						<option <?php if ($u->akses == 'kurir') {
+												echo 'SELECTED';
+											} ?> value="kurir">>Kurir</option>
+					</select>
+				</div>
+				<div class="col-md-12 mt-3">
+					<button type="submit" class="btn btn-success">Simpan</button>
+				</div>
+		
+			</form>
+			<?php endforeach; ?>
+		</div>
+	</div>
+
+	</div>
+
+  </div>
+</section>
+
+</main><!-- End #main -->
+
