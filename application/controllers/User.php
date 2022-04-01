@@ -29,16 +29,16 @@ class User extends CI_Controller {
 			$this->load->view('user/index', $data);
 			$this->load->view('templates/footer', $data);
 		}else {
-			$nama_user	= htmlspecialchars($this->input->post('nama_user', true));
+			$nama_lengkap	= htmlspecialchars($this->input->post('nama_lengkap', true));
 			$username	= htmlspecialchars($this->input->post('username', true));
 			$password	= password_hash(htmlspecialchars($this->input->post('password', true)), PASSWORD_DEFAULT);
 			$akses		= htmlspecialchars($this->input->post('akses', true));
 
 			$data = array (
-				'nama_user'		=> $nama_user,
+				'nama_lengkap'	=> $nama_lengkap,
 				'username'		=> $username,
 				'password'		=> $password,
-				'role'			=> $role
+				'akses'			=> $akses
 			);	
 		}
 

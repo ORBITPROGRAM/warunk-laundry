@@ -1,3 +1,2 @@
 ##  Adinn Laundry Web Application
-1. Iffah Athifah Joined <br>
 Soon...
